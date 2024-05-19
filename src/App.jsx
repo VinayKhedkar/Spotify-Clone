@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className='h-screen w-screen bg-black font-nunito'>
-      <div className='h-[90%] flex'>
+      <div className='h-[90vh] flex'>
         <SideBar/>
         <Content/>
       </div>

@@ -6,7 +6,7 @@ export default function Player(){
     const {seekbar, seekbg, time, track, playstat, play, pause, prev, next, seekSong} = useContext(PlayerContext)
 
     return (
-      <div className="bg-black h-[10%] flex xs:justify-center md:justify-between items-center text-white px-4">
+      <div className="bg-black h-[10vh] flex xs:justify-center md:justify-between items-center text-white px-4">
         <div className="hidden md:flex items-center gap-4 w-[35%] pr-3">
             <img className = 'h-12 rounded' src={track.image} alt="" />
             <div>
