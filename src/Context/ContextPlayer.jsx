@@ -54,6 +54,11 @@ const PlayerContextProvider = (props) => {
     const seekSong = async (e) => {
         audioRef.current.currentTime = ((e.nativeEvent.offsetX/seekbg.current.offsetWidth)*(audioRef.current.duration))
     }
+    const titleUpdate = () => {
+        if (playstat) {
+            document.title = track.name
+        }
+    }
         
     const autoPlay = useCallback(async () => {
         if (audioRef.current.currentTime === audioRef.current.duration) {
@@ -84,6 +89,7 @@ const PlayerContextProvider = (props) => {
     useEffect(()=>{
         setTimeout(()=>{
             audioRef.current.ontimeupdate = () => {
+                titleUpdate()
                 seekbar.current.style.width = ((((audioRef.current.currentTime/audioRef.current.duration)*100))+'%')
                 setTime({
                     currentTime: {
@@ -96,7 +102,7 @@ const PlayerContextProvider = (props) => {
                         }})
             }
         }, 1000)
-    }, [audioRef])
+    }, [audioRef, titleUpdate])
 
     useEffect(() => {
         const handleEnded = async () => {
