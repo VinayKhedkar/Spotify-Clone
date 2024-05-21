@@ -11,11 +11,11 @@ function App() {
 
   return (
     <div className='h-screen w-screen bg-black font-nunito'>
-      <div className='h-[90vh] flex'>
+      <div className='h-[90%] flex'>
         <SideBar/>
         <Content/>
       </div>
-      <Player/>
+      <Player className='fixed bottom-0'/>
       <audio className='hidden' ref={audioRef} src={track.file} preload='auto' controls></audio>
     </div>
   )
