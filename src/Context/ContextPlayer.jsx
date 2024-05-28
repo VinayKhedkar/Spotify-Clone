@@ -7,7 +7,7 @@ const PlayerContextProvider = (props) => {
     const audioRef = useRef()
     const seekbg = useRef()
     const seekbar = useRef()
-    // const [volume, setVolume] = useState(audioRef.current.volume)
+    const [isMuted, setisMuted] = useState(false)
 
 
     const [track, setTrack] = useState(songsData[0])
@@ -61,6 +61,14 @@ const PlayerContextProvider = (props) => {
         else {
             document.title = "Spotify Clone"
         }
+    }
+
+    const audioMute = () => {
+        if (audioRef.current) {
+            audioRef.current.muted = !audioRef.current.muted
+            setisMuted(!isMuted)
+            
+        }        
     }
         
     const autoPlay = useCallback(async () => {
@@ -133,7 +141,7 @@ const PlayerContextProvider = (props) => {
         playWithId,
         prev, next,
         seekSong,autoPlay,
-        // volup,voldown
+        isMuted, audioMute
     }
 
     
