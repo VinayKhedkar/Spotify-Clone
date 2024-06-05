@@ -1,8 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import {assets} from '../assets/assets'
-import { useContext } from 'react'
+import { memo, useContext } from 'react'
 import { PlayerContext } from '../Context/ContextPlayer'
-export default function SideBar(){
+
+
+
+
+const SideBar = memo( function SideBar(){
   const navigate = useNavigate()
   const { track} = useContext(PlayerContext)
     return (
@@ -19,7 +23,7 @@ export default function SideBar(){
           <div className="flex items-center justify-evenly gap-3 p-4 bg-[#242424] rounded">
             <img className='h-[10vh] lg:h-[8vh] rounded' src={track.image} alt="" />
             <div>
-              <p className='font-bold text-lg text-white'>{track.name}</p>
+              <p className='font-bold text-[14px] text-white'>{track.name}</p>
               <p className='font-bold text-[10px]'>{track.desc}</p>
             </div>
           </div>
@@ -54,4 +58,6 @@ export default function SideBar(){
       </div>
       
     )
-  }
+  })
+
+  export default SideBar

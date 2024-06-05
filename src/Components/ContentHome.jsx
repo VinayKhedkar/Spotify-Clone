@@ -16,7 +16,7 @@ function ContentHome() {
             <div className="p-2">
                 <p className="text-xl text-white font-bold">Today&apos;s Biggest Hits</p>
                 <div className="flex overflow-auto items-start">
-                    {songsData.map(item => <SongItem name={item.name} image={item.image} desc={item.desc} id={item.id} key={item.id} duration ={item.duration}/>)}
+                    {songsData.map(item => <SongItem name={item.name} image={item.image} desc={item.desc} id={item.id} key={item.id}/>)}
                 </div>
             </div>
             

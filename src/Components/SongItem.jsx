@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { PlayerContext } from "../Context/ContextPlayer"
 
-function SongItem({id, name, desc, image, duration}){
+function SongItem({id, name, desc, image}){
 
     const {playWithId} = useContext(PlayerContext)
     return (

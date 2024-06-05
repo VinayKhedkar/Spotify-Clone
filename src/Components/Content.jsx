@@ -1,9 +1,10 @@
 import {Routes, Route} from 'react-router-dom'
 import ContentHome from './ContentHome'
 import AlbumData from './AlbumData'
+import { memo } from 'react'
 
 
-export default function Content(){ 
+ let Content = memo( function Content(){ 
     return (
         <div className="w-[100%] bg-[#121212]  m-2 px-6 pt-4 rounded text-[#b3b3b3] overflow-auto">
             <Routes>
@@ -12,4 +13,6 @@ export default function Content(){
             </Routes>
         </div>
     )
-  }
+  })
+
+  export default Content
